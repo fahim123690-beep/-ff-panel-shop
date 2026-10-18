@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FF PANEL SHOP</title>
+<style>
+body{margin:0;background:#101426;color:white;font-family:Arial,sans-serif;padding:18px}
+header{background:#32215d;padding:22px;border-radius:16px;text-align:center}
+h1{color:#ffd447}
+button{background:#5b46d0;color:white;border:0;padding:14px;border-radius:10px;margin:5px;cursor:pointer}
+.products{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px}
+.card{background:#202943;padding:15px;border-radius:12px;text-align:center}
+.price{color:#ffd447;font-weight:bold}
+</style>
+</head>
+<body>
+<header>
+<h1>🎮 FF PANEL SHOP</h1>
+<p>Welcome to our shop!</p>
+</header>
+
+<h2>🛒 Buy FF Panel</h2>
+<div class="products" id="products"></div>
+
+<h2>💳 Deposit Balance</h2>
+<p>bKash: অ্যাডমিনের কাছ থেকে পেমেন্ট নম্বর নিন।</p>
+<p>টাকা পাঠানোর পরে পেমেন্ট যাচাইয়ের জন্য অ্যাডমিনের সঙ্গে যোগাযোগ করুন।</p>
+
+<h2>👤 My Account</h2>
+<p>Telegram অ্যাকাউন্ট যুক্ত হলে এখানে তথ্য দেখা যাবে।</p>
+
+<h2>📦 My Orders</h2>
+<p>অর্ডার সিস্টেম সংযুক্ত হলে এখানে অর্ডার দেখা যাবে।</p>
+
+<script>
+const prices=[20,30,40,70,120,180,200,250,300,400,500,1000];
+const products=document.getElementById('products');
+
+prices.forEach(price=>{
+ const card=document.createElement('div');
+ card.className='card';
+ card.innerHTML='<h3>FF Panel</h3><p class="price">৳'+price+'</p>';
+ const btn=document.createElement('button');
+ btn.textContent='Buy Now';
+ btn.onclick=()=>alert('এই ডেমোতে অর্ডার চালু নেই।');
+ card.appendChild(btn);
+ products.appendChild(card);
+});
+</script>
+</body>
+</html>
